@@ -1,13 +1,6 @@
 #!/bin/bash
 
-# if you want to call the program something different change the Alias variable below
-ALIAS='extshark'
-
-# there should be no need but if you want to change where things are stored do so here
-WEBROOT='/usr/share/'$ALIAS'/htdocs'
-APACHECONF='/etc/apache2/conf-available/'$ALIAS'.conf'
-ETC='/etc/'$ALIAS
-PASSWDFILE=$ETC/'htpasswd.users'
+source ./install.conf
 
 #make sure that the script is being run as root
 if [ $LOGNAME != "root" ]; then
