@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# read variables from conf file
 source ./install.conf
 
 #make sure that the script is being run as root
