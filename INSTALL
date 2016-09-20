@@ -7,6 +7,7 @@ ALIAS='extshark'
 WEBROOT='/usr/share/'$ALIAS'/htdocs'
 APACHECONF='/etc/apache2/conf-available/'$ALIAS'.conf'
 ETC='/etc/'$ALIAS
+PASSWDFILE=$ETC/'htpasswd.users'
 
 #make sure that the script is being run as root
 if [ $LOGNAME != "root" ]; then
@@ -52,7 +53,7 @@ printf "Alias /$ALIAS $WEBROOT
 
         AuthName \"extshark Access\"
         AuthType Basic
-        AuthUserFile $ETC/htpasswd.users
+        AuthUserFile $PASSWDFILE
 
         require valid-user
 </DirectoryMatch>
@@ -65,7 +66,7 @@ printf "Alias /$ALIAS $WEBROOT
 
 htpasswd -b -c $ETC/htpasswd.users admin password
 
-#navigate to apache confs directory and enable site
+#navigate to apache confs directory and enable site configuration
 cd /etc/apache2/conf-available
 a2enconf $ALIAS
 
