@@ -12,7 +12,7 @@ simple web interface for tshark
 <code>sudo htpasswd /etc/<your new alias>/htpasswd.users admin</code>).
 
 ### Custom install
-- if you want to call your application something else you can edit the "INSTALL" file with any text editor and then change the variable <code>ALIAS</code> e.g <code>ALIAS='NewName'</code>
+- if you want to call your application something else you can edit the "install.conf" file with any text editor and then change the variable <code>ALIAS</code> e.g <code>ALIAS='NewName'</code>
 - to change the root directory edit <code>WEBROOT='/your/new/directory'</code> (note: do not put a "/" at the end of the path")
 - to change the config directory where your password file is held edit <code>ETC='/your/new/configDir'</code>.
 
