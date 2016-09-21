@@ -28,6 +28,8 @@ Ext.onReady(function(){
         ],
         idProperty: 'no'
     });
+
+
     //Main element of page
     var viewport = new Ext.Viewport({
         layout:'border',
@@ -42,6 +44,15 @@ Ext.onReady(function(){
                     scope:this,
                     handler:function(){
                         new openFileDialog();
+                    }
+                },{
+                    xtype:'button',
+                    itemId:'Capture',
+                    iconCls:'script-binary',
+                    text:'Capture',
+                    scope:this,
+                    handler:function(){
+                        new captureDialog();
                     }
                 },{xtype: 'tbfill'},'Filter:',{
                     xtype:'textfield',
@@ -60,7 +71,9 @@ Ext.onReady(function(){
             collapsible: false,
             height:28,
             margins:'5 5 5 5'
-        },{
+        },
+            // table ********************************************************************
+        {
             region:'center', //Center element with main table
             margins:'0 5 5 5',
             height:'600',
