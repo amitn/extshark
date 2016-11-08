@@ -64,6 +64,7 @@ htpasswd -b -c $ETC/htpasswd.users admin password
 cd /etc/apache2/conf-available
 a2enconf $ALIAS
 
+/etc/init.d/apache2 restart
 #get out of here
 exit 0
 
